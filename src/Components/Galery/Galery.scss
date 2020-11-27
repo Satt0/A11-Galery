@@ -25,14 +25,14 @@ position: relative;
     @media only screen and (orientation:portrait)
     {
         flex-direction: column;
-        max-height:90vh;
+        height:70vh;
         min-height: 400px;
         justify-content: flex-start;
         
         .Show{
             width:100%;
             overflow: hidden;
-            height:80vh;
+            height:60vh;
         }
         .SidePanel{
               
