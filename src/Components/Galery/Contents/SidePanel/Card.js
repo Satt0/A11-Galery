@@ -2,10 +2,16 @@ import React from 'react'
 import { useSpring, animated } from 'react-spring'
 import './Card.scss'
 
-const calc = (x, y) => [-(y - window.innerHeight / 5) / 25, (x - window.innerWidth / 8) / 25, 1.1]
-const trans = (x, y, s) => `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-export default function Card({name,bg}) {
+
+export default function Card({name,bg,mul}) {
+
+
+  const calc = (x, y) => [-(y - window.innerHeight / (1+(8-1.9*mul))) / 25, (x - window.innerWidth / 8) / 18, 1.1]
+  const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+
+
+
   const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
   return (
     <animated.div

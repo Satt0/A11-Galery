@@ -5,11 +5,12 @@
    @extend %bg;
    border-top: 2px solid gray;
     height:100vh;
+    min-height: 600px;
     display: flex;
     flex-direction: row;
     justify-content:center;
 position: relative;
-   
+   border-bottom: 3px solid white;;
     .Show{
         width:80vw;
 
@@ -23,19 +24,20 @@ position: relative;
     }
     @media only screen and (orientation:portrait)
     {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        max-height:90vh;
+        min-height: 400px;
+        justify-content: flex-start;
         
         .Show{
             width:100%;
             overflow: hidden;
-            height:90vh;
+            height:80vh;
         }
         .SidePanel{
-              width:100%;
-              height:10vh;
               
-              overflow: hidden;
-            
+              display:none
+              
         }
     }
 }

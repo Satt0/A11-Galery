@@ -131,7 +131,7 @@ setHello(state=>(state+1 )% 4)
     <animated.div
       key={key}
       className="bg"
-      style={{ ...props, backgroundImage: `url(${item.url}` }}
+      style={{ ...props, backgroundImage: `url(${item.url}`,backgroundAttachment:'fixed' }}
     >
  
 

@@ -1,14 +1,17 @@
 import React,{useEffect,useState} from "react";
 import "./Header.scss";
 import ScrollIntoView from 'react-scroll-into-view'
+import Creator from './Creator.js'
+
 export default function Header() {
-  
+
 const [toggle,setToggle]=useState(false)
-console.log(toggle);
+
 useEffect(()=>{
     const header=document.getElementById('header')
     let a=null;
     window.addEventListener('scroll',()=>{
+      
         if (a!==null)
         {
           clearTimeout(a)
@@ -17,9 +20,10 @@ useEffect(()=>{
         header.classList="nostyle"
         a=setTimeout(()=>{
           header.classList="style"
-
+          
         },200)
     })
+  
 },[])
 
   return (
@@ -36,7 +40,7 @@ useEffect(()=>{
       <p>Members</p>
     </ScrollIntoView>
        
-    <ScrollIntoView selector="">
+    <ScrollIntoView selector="#video">
       <p>Video</p>
     </ScrollIntoView>
 
@@ -47,7 +51,7 @@ useEffect(()=>{
       <span className="span3"></span>
     </div>
     <div className={toggle?"dropdown-menu on":"dropdown-menu off"}>
-    
+    {/* <Creator/> */}
     </div>
 
      

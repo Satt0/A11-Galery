@@ -4,6 +4,7 @@ import './Galery.scss';
 import 'aos/dist/aos.css';
 import SidePanel from './Contents/SidePanel/SidePanel';
 import Show from './Contents/Show/Show';
+import TopPanel from './Contents/TopPanel/TopPanel'
 export default function Galery() {
     const [a,seta]=useState(1);
     const onclick=(num)=>{
@@ -17,6 +18,7 @@ export default function Galery() {
           
             <SidePanel onclick={onclick}/>
             <Show index={a-1}/>
+            <TopPanel/>
             
         </div>
     )

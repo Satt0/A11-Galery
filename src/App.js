@@ -4,7 +4,8 @@ import Header from "./Components/Header/Header";
 // import { Route, Switch } from "react-router-dom";
 import Intro from './Components/Intro/Intro'
 import Galery from './Components/Galery/Galery.js';
-import Contact from './Components/Contact/Contact'
+import Video from './Components/Contact/Contact'
+import Ending1 from './Components/Ending1/Ending1'
 export default function App() {
 
   return (
@@ -14,7 +15,9 @@ export default function App() {
        <Intro/>
         <Galery/>
         
-        <Contact/>
+        <Video/>
+        <Ending1/>
+      
        
       
     </div>
