@@ -1,0 +1,49 @@
+@import '../../../../App.scss';
+
+.Card-container{
+ padding:0;
+ margin:0;
+}
+
+.Card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+   
+   
+    cursor: pointer;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: top center;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.5s;
+    will-change: transform;
+    border: 15px solid white;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    p{
+      transition: .2s ease;
+        color:$mainColor;
+        font-family: $font2;
+        font-size: 1.6rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        width:100%;
+        text-align: center;
+        position: absolute;
+        bottom:0;
+        padding:0;margin:0;
+        height:100%;
+
+        
+    }
+  }
+  .Card:hover {
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    p{
+ background-color: rgba(0, 0, 0, 0);
+
+      user-select: none;
+    }
+  }

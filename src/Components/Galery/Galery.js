@@ -14,7 +14,7 @@ export default function Galery() {
 
     return (
         <div id="galery" className="Galery">
-           
+          
             <SidePanel onclick={onclick}/>
             <Show index={a-1}/>
             

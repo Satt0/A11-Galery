@@ -33,7 +33,7 @@ useEffect(()=>{
     </ScrollIntoView>
      
     <ScrollIntoView selector="#galery">
-      <p>Galery</p>
+      <p>Members</p>
     </ScrollIntoView>
        
     <ScrollIntoView selector="">
@@ -47,7 +47,7 @@ useEffect(()=>{
       <span className="span3"></span>
     </div>
     <div className={toggle?"dropdown-menu on":"dropdown-menu off"}>
-    additional information
+    
     </div>
 
      

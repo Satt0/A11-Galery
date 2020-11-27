@@ -1,18 +1,19 @@
 @import '../../Galery.scss';
 
 .SidePanel{
-ul{
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    @media only screen  and (orientation:portrait){
-        
-        flex-direction: row ;
-    }
-    li{
-        font-size: 20px;
-        text-align: center;
-    }
-}
-       
+    overflow: hidden;
+     display:flex;flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     .Card-container{
+         position: relative;
+         width:80%;
+         height:22vh;
+     }
+     @media only screen and (orientation:portrait){
+         .Card-container{
+             display:none;
+         }
+         
+     }
 }

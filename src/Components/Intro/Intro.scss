@@ -121,17 +121,29 @@
    
    @media screen  and (max-width:$mobileWidth){
      flex-direction: column;
-     justify-content: center;
+     justify-content: space-around;
      align-items: center;
+     .container-text{
+       margin-top: 15%;
+     }
     //  margin-top: 45vh;
    }
  
-   .container-Hello {
-     font-size: 50px;
+   .container-text {
+     font-size: 2.4rem;
+     text-shadow: 2px 2px 2px rgba(14, 15, 14,.3);
+ width:50vw;
+ text-align: center;
+     
      color: white;
-     @media screen  and (max-width:$mobileWidth){
+     @media screen  and (orientation:portrait){
        text-align: center;
+       font-size: 2.1rem;
+       p{
+        transform:translateY(15%)
+      }
      }
+     
     
  
      font-family: $introFont;
@@ -207,7 +219,7 @@
     width: 100%;
     height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   will-change: opacity;
 
 
