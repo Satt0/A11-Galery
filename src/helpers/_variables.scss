@@ -1,23 +1,26 @@
 //colors
-
+$mainColor:lightyellow;
 
 
 
 //background
-$bg1:rgb(255, 212, 148);
-
+// $bg1:rgb(223, 176, 58);
+$bg1:gray;
 
 
 
 //font-family
 
 $font1:'Roboto',sans-serif;
-
-
+$introFont:'Dancing Script', cursive;
+$font2:'Sansita Swashed', cursive;
 
 //url
 
 
 //with && height
 $navHeight:6vh;
-$mainHeight:94vh;
+$mainHeight:100vh;
+$mobileWidth:727px;
+$carouselWidth:70vw;
+$carouselWidthMobile:95vw;

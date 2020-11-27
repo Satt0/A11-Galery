@@ -1,0 +1,18 @@
+@import '../../Galery.scss';
+
+.SidePanel{
+ul{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    @media only screen  and (orientation:portrait){
+        
+        flex-direction: row ;
+    }
+    li{
+        font-size: 20px;
+        text-align: center;
+    }
+}
+       
+}

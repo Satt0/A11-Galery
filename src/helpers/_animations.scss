@@ -8,3 +8,13 @@
         transform: translateY(0);
     }
 }
+@keyframes bouncing{
+   from {
+       z-index: 0;
+       width:0px;
+   }
+   to {
+       z-index: 0;
+       width:200px;
+   }
+}

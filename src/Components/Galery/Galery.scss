@@ -1,6 +1,41 @@
 @import '../../App.scss';
 
 .Galery{
-    height:$mainHeight;
-    background-color: blue;
+   background-image: url('./bg-white.jpg');
+   @extend %bg;
+   border-top: 2px solid gray;
+    height:100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+position: relative;
+   
+    .Show{
+        width:80vw;
+
+        height:100%;
+    }
+    .SidePanel{
+          width:20vw;
+          min-width: 200px;
+          height:100%;
+          overflow: hidden;
+    }
+    @media only screen and (orientation:portrait)
+    {
+        flex-direction: column;
+        
+        .Show{
+            width:100vw;
+            overflow: scroll;
+            height:100vh;
+        }
+        .SidePanel{
+            //   width:100vw;
+            //   height:10vh;
+              
+            //   overflow: scroll;
+            display:none;
+        }
+    }
 }

@@ -1,22 +1,219 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
-.Intro{
-    min-height:$mainHeight;
-   background-image: url('./bg.jpg');
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-   &-Hello{
-    font-size: 50px;
-    color:white;
-    margin-bottom: 15vh;
-    margin-left: 5vw;
+// .Intro {
+//   min-height: $mainHeight;
+//   width: 100%;
+//   overflow: hidden;
+//   background-image: url("./bg2.png");
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: cover;
+//   &.color{
+//     background-image: url(./color.jpg);
+//   }
+//  &-container{
+//    width:100%;
+//    margin-top:75vh;
+//   display: flex;
+//   flex-direction: row;
+//  justify-content: space-around;
+//  align-items: center;
+  
+//   @media screen  and (max-width:$mobileWidth){
+//     flex-direction: column;
+//     margin-top: 45vh;
+//   }
+
+//   &-Hello {
+//     font-size: 50px;
+//     color: white;
+//     @media screen  and (max-width:$mobileWidth){
+//       text-align: center;
+//     }
    
-    font-family: $font1;
-   }
 
+//     font-family: $introFont;
+//   }
+//   &-Button {
+//     --c: goldenrod;
+//     background-color: transparent;
+//     color: var(--c);
+//     cursor: pointer;
+//     font-size: 16px;
+//     border: 5px solid var(--c);
+//     border-radius: 0.5em;
+//     width: 240px;
+//     height:70px;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     font-family: sans-serif;
+//     letter-spacing: 0.1em;
+//     text-align: center;
+//     line-height: 4em;
+//     position: relative;
+//     overflow: hidden;
+//     z-index: 1;
+//     transition: 0.5s;
+//     margin: 1em;
+   
+//     padding:0;
+  
+//     span {
+//       position: absolute;
+//       width: 25%;
+//       height: 100%;
+//       background-color: var(--c);
+//       transform: translateY(150%);
+//       border-radius: 50%;
+//       left: calc((var(--n) - 1) * 25%);
+//       transition: 0.5s;
+//       transition-delay: calc((var(--n) - 1) * 0.1s);
+//       z-index: -1;
+      
+//     }
+ 
+//     @media (hover: hover) and (pointer: fine) {
+//       &:hover {
+//         color: black;
+//         span {
+//           transform: translateY(0) scale(2);
+//         }
+//        }
+//     }
+    
+//     span:nth-child(1) {
+//         --n: 1;
+//     }
+//     span:nth-child(2) {
+//         --n: 2;
+//     }
+//     span:nth-child(3) {
+//         --n: 3;
+//     }
+//     span:nth-child(4) {
+//         --n: 4;
+//     }
+    
+//   }
+//  }
+
+// }
+
+.Intro-Container{
+  padding:0;
+  margin:0;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+
+
+  .Hcontainer{
+    position: absolute;
+    z-index: 123123;
+    width:100%;
+    height:80vh;
+   
+   display: flex;
+   flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+   
+   @media screen  and (max-width:$mobileWidth){
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+    //  margin-top: 45vh;
+   }
+ 
+   .container-Hello {
+     font-size: 50px;
+     color: white;
+     @media screen  and (max-width:$mobileWidth){
+       text-align: center;
+     }
+    
+ 
+     font-family: $introFont;
+   }
+   .container-Button {
+     --c: goldenrod;
+     background-color: transparent;
+     color: var(--c);
+     cursor: pointer;
+     font-size: 16px;
+     border: 5px solid var(--c);
+     border-radius: 0.5em;
+     width: 240px;
+     height:70px;
+     text-transform: uppercase;
+     font-weight: bold;
+     font-family: sans-serif;
+     letter-spacing: 0.1em;
+     text-align: center;
+     line-height: 4em;
+     position: relative;
+     overflow: hidden;
+     z-index: 1;
+     transition: 0.5s;
+     margin: 1em;
+    
+     padding:0;
+   
+     span {
+       position: absolute;
+       width: 25%;
+       height: 100%;
+       background-color: var(--c);
+       transform: translateY(150%);
+       border-radius: 50%;
+       left: calc((var(--n) - 1) * 25%);
+       transition: 0.5s;
+       transition-delay: calc((var(--n) - 1) * 0.1s);
+       z-index: -1;
+       
+     }
+  
+     @media (hover: hover) and (pointer: fine) {
+       &:hover {
+         color: black;
+         span {
+           transform: translateY(0) scale(2);
+         }
+        }
+     }
+     
+     span:nth-child(1) {
+         --n: 1;
+     }
+     span:nth-child(2) {
+         --n: 2;
+     }
+     span:nth-child(3) {
+         --n: 3;
+     }
+     span:nth-child(4) {
+         --n: 4;
+     }
+     
+   }
+  }
+ 
+
+
+
+  .bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  background-size: cover;
+  background-position: center;
+  will-change: opacity;
+
+
+
+
+
+
+  }
 }

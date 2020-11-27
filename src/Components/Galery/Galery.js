@@ -1,15 +1,24 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Galery.scss';
-import {Link} from 'react-router-dom';
-import AOS from 'aos';
+// import {Link} from 'react-router-dom';
 import 'aos/dist/aos.css';
-import About from './Contents/About/About'
+import SidePanel from './Contents/SidePanel/SidePanel';
+import Show from './Contents/Show/Show';
 export default function Galery() {
-    AOS.init({once:true});
+    const [a,seta]=useState(1);
+    const onclick=(num)=>{
+       
+        seta(num);
+    }
+  
+
     return (
-        <div className="Galery" data-aos="slide-left" data-aos-duration="400">
-            <About/>
+        <div id="galery" className="Galery">
+           
+            <SidePanel onclick={onclick}/>
+            <Show index={a-1}/>
             
         </div>
     )
 }
+// data-aos="fade-in" data-aos-duration="400"
