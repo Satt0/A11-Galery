@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import range from "lodash-es/range";
 import "./Carousel.scss";
-import img from "./bg/Export";
-console.log(img);
+import imgList from "./bg/Export";
+
 
 const generate = (before,arr, length) => {
+
   let result = range(length);
   for (let i = 0; i<length; i++) {
     const temp = arr[Math.floor(Math.random() * arr.length)];
@@ -35,20 +36,28 @@ const first = (arr, length) => {
 };
 
 export default function Carousel({ length, view }) {
+  const img=imgList[view];
+  
   const [data, setData] = useState([]);
   useEffect(() => {
     setData(first(img, length));
-  }, [view, length]);
+  }, [view, length,img]);
   useEffect(() => {
     const a=setTimeout(() => {
-      if (length === data.length) {
+
+
+     
+      if (view === 'girl' || view==='leader' ) {
         setData(state=>generate(state,img,length));
+      }
+      else{
+        setData(first(img,length))
       }
     }, Math.random()*1500 + 3000);
     return (()=>{
       clearTimeout(a)
     })
-  }, [length, data]);
+  }, [length, data,img,view]);
 
   return (
     <div className="Carousel-Container" id="carousel-id">

@@ -1,5 +1,5 @@
 
-
+@import '../../../../App.scss';
 .TopPanel-Container{
  overflow: hidden;
     @media only screen and (orientation:landscape){
@@ -26,13 +26,19 @@
         text-align: center;
         background-color: #203354;
         color:white;
-        transition: .2s ease;
+        transition: .5s ease-in-out;
         font-size: 1rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
         user-select: none;
-        
+        p{
+            font-family:$font2 ;
+            
+        }
         
     }
-    li:hover{
+    li.lighten{
         border-top: 8px solid#203354 ;
         border-bottom: 2px solid#203354 ;
         background-color: magenta;

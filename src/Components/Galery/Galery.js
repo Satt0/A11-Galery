@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './Galery.scss';
 // import {Link} from 'react-router-dom';
 import SidePanel from './Contents/SidePanel/SidePanel';
@@ -23,12 +23,20 @@ export default function Galery() {
             await seta(num)
         }
     }
+    useEffect(()=>{
+        const t=setInterval(() => {
+            seta(a=>(a+1)%4);
+        }, 8000);
+        return (()=>{
+            clearInterval(t)
+        })
+    })
     return (
         <div id="galery" className="Galery" >
           
-            <SidePanel onClick={onClick}/>
+            <SidePanel onClick={onClick} index={a}/>
             <Show length={display[a].length} view={display[a].view}/>
-            <TopPanel/>
+            <TopPanel onClick={onClick} index={a}/>
             
         </div>
     )

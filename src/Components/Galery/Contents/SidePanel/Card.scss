@@ -1,50 +1,64 @@
-@import '../../../../App.scss';
+@import "../../../../App.scss";
 
-.Card-container{
- padding:0;
- margin:0;
+.Card-container {
+  padding: 0;
+  margin: 0;
 }
 
 .Card {
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  position: absolute;
+transform: scale(0.9);
+  cursor: pointer;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: top center;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+  will-change: transform;
+  border: 0.8em solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    transition: 0.2s ease;
+    color: $mainColor;
+    font-family: $font2;
+    font-size: 1.6rem;
+    background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
-    height: 100%;
-    min-height: 130px;
+    text-align: center;
     position: absolute;
-   
-   
-    cursor: pointer;
-    border-radius: 5px;
-    background-size: cover;
-    background-position: top center;
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
-    will-change: transform;
-    border: .8em solid white;
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    p{
-      transition: .2s ease;
-        color:$mainColor;
-        font-family: $font2;
-        font-size: 1.6rem;
-        background-color: rgba(0, 0, 0, 0.3);
-        width:100%;
-        text-align: center;
-        position: absolute;
-        bottom:0;
-        padding:0;margin:0;
-        opacity:1;
-
-        
-    }
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
   }
-  .Card:hover {
-    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
-    p{
-
-  opacity:0;
-      user-select: none;
-    }
+}
+.Card:hover {
+  box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.07) !important;
+  p {
+    opacity: 0;
+    user-select: none;
   }
+}
+.Card.zoom {
+  border: 10px solid white;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+  p {
+    background-color: rgba(0, 0, 0, 0.8);
+
+    user-select: none;
+  }
+}
+.Card.zoom:nth-child(even) {
+  transform: scale(1.1)  !important;
+}
+.Card.zoom:nth-child(odd) {
+  transform: scale(1.1)  !important;
+}
