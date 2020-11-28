@@ -63,18 +63,18 @@ import React, { useState, useEffect } from 'react'
 import { useTransition, animated, config } from 'react-spring'
 import './Intro.scss'
 import bg_1 from './bg/bg_1.JPG'
-import bg_2 from './bg/bg_2.JPG'
-import bg_3 from './bg/bg_3.JPG'
+// import bg_2 from './bg/bg_2.JPG'
+// import bg_3 from './bg/bg_3.JPG'
 import bg_4 from './bg/bg_4.JPG'
 import bg_5 from './bg/bg_5.JPG'
 import ScrollIntoView from 'react-scroll-into-view'
 // import Text from './Text'
 const slides=[
   {id:0,url:bg_1},
-  {id:1,url:bg_2},
-  {id:2,url:bg_3},
-  {id:3,url:bg_4},
-  {id:4,url:bg_5}
+  // {id:1,url:bg_2},
+  // {id:2,url:bg_3},
+  {id:1,url:bg_4},
+  {id:2,url:bg_5}
 ]
 
 export default function Intro () {
@@ -91,7 +91,7 @@ export default function Intro () {
   
   {
   
-  set(state => (state + 1) % 5)
+  set(state => (state + 1) % 3)
 setHello(state=>(state+1 )% 4)
   
   

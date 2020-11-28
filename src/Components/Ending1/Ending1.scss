@@ -1,10 +1,16 @@
 
 @import '../../App.scss';
 .Ending{
-
+    &.end1{
+        background-image: url('./bg1.jpg');
+    }
+    &.end2{
+        background-image: url('./bg.jpg');
+    }
+    
     min-height:700px;
     height:100vh;
-    background-image: url('./bg1.jpg');
+  
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;

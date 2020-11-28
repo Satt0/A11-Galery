@@ -3,21 +3,22 @@
 .Galery{
   
    @extend %bg;
-   border-top: 2px solid gray;
+  border:none;
     height:100vh;
     min-height: 600px;
     display: flex;
     flex-direction: row;
     justify-content:center;
 position: relative;
-   border-bottom: 3px solid white;;
+   
     .Show{
         width:80vw;
-
+        z-index: 2;
         height:100%;
     }
     .SidePanel{
           width:20vw;
+          z-index: 4;
           min-width: 200px;
           height:100%;
           overflow: hidden;
