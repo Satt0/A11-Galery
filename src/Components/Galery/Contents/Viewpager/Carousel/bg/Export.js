@@ -1,5 +1,5 @@
 const girl=[]
-for(let i=0;i<11;i++)
+for(let i=0;i<25;i++)
 {
     girl.push({src:require(`./girl/girl${i+1}.JPG`)})
 }
@@ -10,11 +10,12 @@ for(let i=0;i<3;i++)
 }
 
 const leader=[]
-for(let i=0;i<6;i++)
+for(let i=0;i<4;i++)
 {
     leader.push({src:require(`./leader/leader${i+1}.JPG`)})
 }
-
+const boy=[]
+boy.push({src:require('./boy/boy1.jpg')})
 
 export default {
     girl:girl,

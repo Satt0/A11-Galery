@@ -1,3 +1,4 @@
+@import '../../../../../App.scss';
 .Carousel-Container {
   position: relative;
   width: 100%;
@@ -9,15 +10,18 @@
  
 
   .script-bf-box {
-    max-width: 400px;
-
+    // max-width: 400px;
+    
     height: 80%;
     @media only screen and(orientation:landscape) {
       min-width: 180px;
       
     }
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
     background: transparent;
     background-position: center;
     transition: background-image 0.7s ease !important;
@@ -28,13 +32,32 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
 
     &:nth-child(even) {
-      animation: moveup 8s infinite ease-out;
+      animation: moveup 20s infinite ease-out;
     }
     &:nth-child(odd) {
       animation-delay: 400ms;
-      animation: movedown 8s infinite ease-out;
-    }
+      animation: movedown 20s infinite ease-out;
 
+     
+    }
+    p{
+      color:white;
+      background-color: rgba(0, 0, 0, 0.2);
+      width:100%;
+      text-align: center;
+      height:8%;
+      margin:0;
+      padding:0;
+      font-family: $font2;
+      font-size: 1.8em;
+      display: flex;
+      justify-content: center;
+      align-content:center;
+      @media only screen and (max-width:1000px)
+      {
+        font-size: 18px;
+      }
+    }
     // @for $i from 1 through 4 {
     //   &:nth-child(#{$i}) {
 
@@ -52,7 +75,7 @@
      transition: none;
      margin:0;
       min-width:70px;
-      margin:8px;
+      margin: 1px;
     }
      
    }
@@ -63,10 +86,10 @@
     transform: translate3d(0, 0px, 0);
   }
   25% {
-    transform: translate3d(0, 30px, 5px);
+    transform: translate3d(0, 20px, 0);
   }
   75% {
-    transform: translate3d(0, -20px, -5px);
+    transform: translate3d(0, -15px, 0);
   }
   100% {
     transform: translate3d(0, 0px, 0);
@@ -77,10 +100,10 @@
     transform: translate3d(0, 0px, 0);
   }
   25% {
-    transform: translate3d(0, -30px, -50px);
+    transform: translate3d(0, -20px, 0);
   }
   75% {
-    transform: translate3d(0, 20px, 50px);
+    transform: translate3d(0, 15px, 0);
   }
   100% {
     transform: translate3d(0, 0px, 0);

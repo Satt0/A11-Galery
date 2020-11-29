@@ -47,7 +47,7 @@ export default function Carousel({ length, view }) {
 
 
      
-      if (view === 'girl' || view==='leader' ) {
+      if (view === 'girl' || view==='boy' ) {
         setData(state=>generate(state,img,length));
       }
       else{
@@ -63,14 +63,16 @@ export default function Carousel({ length, view }) {
     <div className="Carousel-Container" id="carousel-id">
       {data.map((e, i) => (
         <div
-         key={i}
+         key={i*1000}
           style={{
-            width: `${100 / length - 5}%`,
+            width: `${100 / length -2}%`,
             backgroundImage: `url(${e.src})`,
             transition:`background-transition .7s ease`
           }}
           className="script-bf-box"
-        ></div>
+        >
+          
+        </div>
       ))}
     </div>
   );

@@ -18,12 +18,7 @@ export default function Ending1() {
         <div className="Ending end1">
         <h2>scroll down...</h2>
         </div>
-        <div className="Ending end2">
-
-
-            <h2>And down...</h2>
-            
-        </div>
+       
         </>
     )
 }
