@@ -1,10 +1,11 @@
 import React,{useEffect,useState} from "react";
 import "./Header.scss";
 import ScrollIntoView from 'react-scroll-into-view'
+import music from './1.mp3'
 export default function Header() {
 
 const [toggle,setToggle]=useState(false)
-
+const [mute,toggleMusic]=useState(true)
 useEffect(()=>{
     const header=document.getElementById('header')
     let a=null;
@@ -23,16 +24,39 @@ useEffect(()=>{
     })
   
 },[])
+useEffect(()=>{
+  const id=document.getElementById('music-content')
+  id.volume="0.5"
+ if(mute){
+   id.pause()
+ }
+ else{
+   id.play()
+ }
+},[mute])
 
   return <>
     <header id="header" className={!toggle?'style':'nostyle'}>
-     
+    <figure id="music-player">
+    
+    <audio
+          id="music-content"
+          preload="auto"
+        controls
+        autoPlay={true}
+        loop={true}
+        // muted={mute}
+        src={music}>
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+</figure>
 
       
       <div className="link-container">
-      <ScrollIntoView selector="#intro">
+      {/* <ScrollIntoView selector="#intro">
       <p>Wellcome</p>
-    </ScrollIntoView>
+    </ScrollIntoView> */}
      
     <ScrollIntoView selector="#galery">
       <p>Members</p>
@@ -41,7 +65,7 @@ useEffect(()=>{
     <ScrollIntoView selector="#video">
       <p>Video</p>
     </ScrollIntoView>
-
+<p onClick={()=>{toggleMusic(a=>!a)}}>Music:{!mute?"on":"off"}</p>
       </div>
     
     {/* <div className={toggle?"dropdown-menu on":"dropdown-menu off"}>

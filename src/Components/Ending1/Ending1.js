@@ -16,7 +16,7 @@ export default function Ending1() {
 //     ]
     return (<>
         <div className="Ending end1">
-        <h2>scroll down...</h2>
+        <h2>...</h2>
         </div>
        
         </>

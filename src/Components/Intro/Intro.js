@@ -37,6 +37,7 @@ setHello(state=>(state+1 )% 4)
   }
   ,4000), [])
   return <div className="Intro-Container" id="intro">
+    
      <div className="Hcontainer">
        <div className="container-text">
           <p>{text[hello]}</p>

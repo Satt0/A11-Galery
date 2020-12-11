@@ -10,7 +10,7 @@ for(let i=0;i<5;i++)
 }
 
 const leader=[]
-for(let i=0;i<7;i++)
+for(let i=0;i<11;i++)
 {
     leader.push({src:require(`./leader/leader${i+1}.JPG`)})
 }

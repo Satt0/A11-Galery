@@ -22,7 +22,7 @@ export default function Galery() {
   useEffect(() => {
     const t = setInterval(() => {
       seta((a) => (a + 1) % 4);
-    }, 50000);
+    }, 60000);
     return () => {
       clearInterval(t);
     };
