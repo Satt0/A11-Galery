@@ -1,37 +1,54 @@
+@import "../../App.scss";
+.Video-Container {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-attachment: fixed;
+  background-image: url("./bg2.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
 
-@import '../../App.scss';
-.Video-Container{
-    width:100%;
-    height:100vh;
-    min-height: 600px;
-    background-attachment: fixed;
-    background-image: url('./bg2.png');
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    
-    align-items: center;
-    .wrapper {
-        position: relative;
-        padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+  align-items: center;
+  .wrapper {
+    position: relative;
+    padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  }
+  .Video-Select {
+    width: 70vw;
+    ul {
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      li {
+        color: white;
+        font-family: $font2;
+        margin-right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        &.playing {
+          border-bottom: 2px solid white;
+        }
       }
-      
-      .player {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    h1{
-        color:white;
-        font-size: 45px;
-        z-index: 12312;
-        text-shadow: 2px 2px 2px rgba($color: #000000, $alpha: .4);
-        font-family: $introFont;
     }
-    
+  }
+  .player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  h1 {
+    color: white;
+    font-size: 45px;
+    z-index: 12312;
+    text-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.4);
+    font-family: $introFont;
+  }
 }

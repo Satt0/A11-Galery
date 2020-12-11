@@ -7,7 +7,7 @@ import bg_girl from '../../bg-girl.JPG'
 import bg_leader from '../../bg-leader.JPG'
 export default function SidePanel({onClick,index}) {
  
-const list=[{name:'Teachers',img:bg_teacher},{name:'Leaders',img:bg_leader},{name:'Boys',img:bg_boys},{name:'Girls',img:bg_girl}]
+const list=[{name:'Teachers',img:bg_teacher},{name:'Girls',img:bg_girl},{name:'Boys',img:bg_boys},{name:'Moments',img:bg_leader}]
   
    
     return (

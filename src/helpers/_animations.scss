@@ -18,3 +18,39 @@
        width:200px;
    }
 }
+@keyframes moveup {
+    0% {
+      transform: translate3d(0, 0px, 0);
+    }
+    25% {
+      transform: translate3d(0, 20px, 0);
+    }
+    75% {
+      transform: translate3d(0, -15px, 0);
+    }
+    100% {
+      transform: translate3d(0, 0px, 0);
+    }
+  }
+  @keyframes movedown {
+    0% {
+      transform: translate3d(0, 0px, 0);
+    }
+    25% {
+      transform: translate3d(0, -20px, 0);
+    }
+    75% {
+      transform: translate3d(0, 15px, 0);
+    }
+    100% {
+      transform: translate3d(0, 0px, 0);
+    }
+  }
+  
+
+
+  @keyframes breath {
+    0%   { background-size: 100%; }
+    50%{background-size: 110%;}
+    100% { background-size: 100%; }
+  }

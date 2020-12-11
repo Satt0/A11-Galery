@@ -1,7 +1,7 @@
 import React from "react";
 import "./TopPanel.scss";
 export default function TopPanel({onClick,index}) {
-  const arr=['Teacher',"Leaders","Boys","Girls"]
+  const arr=['Teacher',"Girls","Boys","Moments"]
 
   return (
     <div className="TopPanel-Container">

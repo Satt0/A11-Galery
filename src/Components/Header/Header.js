@@ -1,27 +1,26 @@
 import React,{useEffect,useState} from "react";
 import "./Header.scss";
 import ScrollIntoView from 'react-scroll-into-view'
-
 export default function Header() {
 
 const [toggle,setToggle]=useState(false)
 
 useEffect(()=>{
-    // const header=document.getElementById('header')
-    // let a=null;
-    // window.addEventListener('scroll',()=>{
+    const header=document.getElementById('header')
+    let a=null;
+    window.addEventListener('scroll',()=>{
       
-    //     if (a!==null)
-    //     {
-    //       clearTimeout(a)
-    //     }
+        if (a!==null)
+        {
+          clearTimeout(a)
+        }
        
-    //     header.classList="nostyle"
-    //     a=setTimeout(()=>{
-    //       header.classList="style"
+        header.classList="nostyle"
+        a=setTimeout(()=>{
+          header.classList="style"
           
-    //     },200)
-    // })
+        },200)
+    })
   
 },[])
 

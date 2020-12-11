@@ -2,8 +2,7 @@ import React from 'react'
 import './Card.scss'
 
 
-
-export default function Card({name,bg,mul,zoom}) {
+export default function Card({name,bg,zoom}) {
 
 
 

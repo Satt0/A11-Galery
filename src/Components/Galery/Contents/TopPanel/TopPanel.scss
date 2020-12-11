@@ -19,19 +19,21 @@
     li{
         height:100%;
         width:25vw;
-       
+       font-weight: bold;
         display: inline-block;
-        border-top: 8px solid magenta;
-        border-bottom: 2px solid magenta ;
+        border-top: 8px solid $card2;
+        border-bottom: none ;
         text-align: center;
-        background-color: #203354;
-        color:white;
-        transition: .5s ease-in-out;
+        background-color: $card1;
+        color:$card2;
+        transition: .2s ease-in-out;
         font-size: 1rem;
         display:flex;
         justify-content: center;
         align-items: center;
         user-select: none;
+    
+        
         p{
             font-family:$font2 ;
             
@@ -39,10 +41,10 @@
         
     }
     li.lighten{
-        border-top: 8px solid#203354 ;
-        border-bottom: 2px solid#203354 ;
-        background-color: magenta;
-
+        border-top: 8px solid $card1 ;
+        border-bottom: none ;
+        background-color: $card2;
+        color:$card1;
     }
     
    }
