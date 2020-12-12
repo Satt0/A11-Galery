@@ -1,7 +1,7 @@
 @import '../../App.scss';
 
 .Galery{
-  
+  z-index: 123123;
    @extend %bg;
   border:none;
     height:100vh;
@@ -18,7 +18,7 @@ position: relative;
     }
     .SidePanel{
           width:20vw;
-          z-index: 4;
+       
           min-width: 200px;
           height:100%;
           overflow: hidden;

@@ -1,5 +1,5 @@
 const girl=[]
-for(let i=0;i<31;i++)
+for(let i=0;i<38;i++)
 {
     girl.push({src:require(`./girl/girl${i+1}.JPG`)})
 }

@@ -2,10 +2,11 @@
 
 .SidePanel{
     overflow: visible;
-   
+   z-index: 1231231233123;
      display:flex;flex-direction: column;
      justify-content: space-around;
      align-items: center;
+    background-color: white ;
      .Card-container{
          position: relative;
          width:80%;
