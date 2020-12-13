@@ -4,13 +4,13 @@ for(let i=0;i<38;i++)
     girl.push({src:require(`./girl/girl${i+1}.JPG`)})
 }
 const teacher=[]
-for(let i=0;i<5;i++)
+for(let i=0;i<3;i++)
 {
-    teacher.push({src:require(`./teacher/teacher${i+1}.JPG`)})
+    teacher.push({src:require(`./teacher/teacher${i+1}.jpg`)})
 }
 
 const leader=[]
-for(let i=0;i<11;i++)
+for(let i=0;i<12;i++)
 {
     leader.push({src:require(`./leader/leader${i+1}.JPG`)})
 }

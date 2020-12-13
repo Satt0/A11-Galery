@@ -20,13 +20,19 @@ export default function Galery() {
     };
   };
   useEffect(() => {
-    const t = setInterval(() => {
+    let time=0;
+    switch(a){
+      case 0:time=15000;break;
+      case 2:time=15000;break;
+      default: time=60000;break
+    }
+    const t = setTimeout(() => {
       seta((a) => (a + 1) % 4);
-    }, 60000);
+    }, time);
     return () => {
-      clearInterval(t);
+      clearTimeout(t);
     };
-  });
+  },[a]);
   return (
     <div id="galery" className="Galery">
       <SidePanel onClick={onClick} index={a} />
