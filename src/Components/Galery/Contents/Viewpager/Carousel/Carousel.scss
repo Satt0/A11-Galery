@@ -12,6 +12,7 @@
 
   .script-bf-box {
     // max-width: 400px;
+  cursor:pointer;
 
     .rope {
       z-index: 12312312;
@@ -67,16 +68,20 @@
 
     &:nth-child(even) {
       // animation: moveup 20s infinite ease-out;
+     &.animated{
       animation: swing-top-fwd-even 14s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-          infinite,
-        moveup 20s ease-in-out infinite;
+      infinite,
+    moveup 20s ease-in-out infinite;
+     }
     }
     &:nth-child(odd) {
       // animation-delay: 400ms;
       // animation: movedown 20s infinite ease-out;
-      animation: swing-top-fwd-odd 14s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      &.animated{
+        animation: swing-top-fwd-odd 14s cubic-bezier(0.25, 0.46, 0.45, 0.94)
           infinite,
         movedown 20s ease-in-out infinite;
+      }
     }
 
     p {

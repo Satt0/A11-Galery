@@ -14,6 +14,7 @@ export default function Header() {
     { src: music2, name: "Hom nay toi buon." },
     { src: music3, name: "Vo tinh." },
   ];
+  const mslength=4;
   const [toggle, setToggle] = useState(false);
   const [mute, toggleMusic] = useState(true);
   const [list, toggleList] = useState(0);
@@ -45,7 +46,7 @@ export default function Header() {
   useEffect(() => {
     const id = document.getElementById("music-content");
     const toggle = () => {
-      toggleList((a) => (a + 1) % ms.length);
+      toggleList((a) => (a + 1) % mslength);
     };
     id.addEventListener("ended", toggle);
     return () => {
@@ -63,6 +64,7 @@ export default function Header() {
       <header id="header" className={!toggle ? "style" : "nostyle"}>
         <figure id="music-player">
           <audio
+          playsInline
           style={{pointerEvents:"none"}}
             id="music-content"
             preload="auto"
@@ -105,6 +107,7 @@ onClick={() => {
             />
 
             <div  className="song-name" style={mute ? { display: "none" } : {}}>
+
               <p  className="name">{ms[list].name}</p>
             </div>
           </li>

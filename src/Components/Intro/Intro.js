@@ -1,20 +1,45 @@
-import React, { useEffect } from "react";
+import React,{useEffect,useState} from "react";
 import "./Intro.scss";
 import video from "./rain.mp4";
 import ScrollIntoView from "react-scroll-into-view";
+// import { values } from "lodash-es";
 
 export default function Intro() {
-  useEffect(() => {
-    const video = document.getElementById("myVideo");
-    video.playbackRate = 0.8;
-  });
-
+  const [state,setState]=useState(true);
+useEffect(()=>{
+  const block=document.getElementById('intro')
+const action=()=>{
+  const a=(block.getBoundingClientRect().bottom);
+  if(a<=0)
+  {
+    setState(false)
+  }
+  else{
+    setState(true)
+  }
+}
+window.addEventListener('scroll',action)
+return ()=>{
+  window.removeEventListener('scroll',action)
+}
+})
+// useEffect(()=>{
+//   console.log(state);
+//   const vd=document.getElementById('myVideo')
+//   if(state){
+//     vd.play()
+//   }
+//   else{
+//       vd.pause()
+//   }
+// },[state])
   return (
     <div className="Intro-Container" id="intro">
       <figure className="video-container">
         <video
           autoPlay
-          playbackRate="0.3"
+          
+          playsInline
           muted
           loop
           id="myVideo"
@@ -48,9 +73,9 @@ export default function Intro() {
                   id="text"
                   x="50%"
                   y="50%"
-                  font-family="'Oswald', sans-serif"
-                  letter-spacing="15px"
-                  text-anchor="middle"
+                  fontFamily="'Oswald', sans-serif"
+                  letterSpacing="15px"
+                  textAnchor="middle"
                 >
                   A11 GAllERY!
                 </text>
@@ -61,7 +86,7 @@ export default function Intro() {
                     x="-6"
                     y="-6"
                     stroke="#000"
-                    stroke-width="5"
+                    strokeWidth="5"
                     xlinkHref="#text"
                     opacity="1"
                     fill="#000"
