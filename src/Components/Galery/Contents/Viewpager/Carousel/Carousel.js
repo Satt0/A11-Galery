@@ -11,8 +11,8 @@ export default function Carousel({ length, view }) {
   // const color=[`rgba(255,102,102,.5)`,`rgba(255,255,51,.5)`,`rgba(153,255,51,.5)`,'rgba(51,153,255,.5)']
   
   const [data, setData] = useState([]);
+  const [preload,setPreload]=useState([])
   const [count,setCount]=useState(Math.floor(Math.random()*img.length));
-
   useEffect(()=>{
       let a;
      if(on){
@@ -27,16 +27,16 @@ export default function Carousel({ length, view }) {
   },[view,length,img,on])
   useEffect(()=>{
     const list=[];
-
+    const pre=[]
     for(let i=count;i<count+length;i++)
     {
       list.push(img[i%img.length]);
+      pre.push(img[(i+length)%img.length])
 
     }
     setData(list)
-    return ()=>{
-      setData([])
-    }
+    setPreload(pre)
+   
   },[view,length,img,count])
   useEffect(()=>{
       const pivot=Math.floor(Math.random()*img.length)
@@ -65,6 +65,11 @@ export default function Carousel({ length, view }) {
   })
   return (
     <div className="Carousel-Container" id="carousel-id">
+      <div style={{opacity:0,position:'absolute',zIndex:-50}}>
+        {preload.map(e=>(
+        <div style={{ backgroundImage: `url(${e.src})`}}></div>
+        ))}
+      </div>
       {data.map((e, i) => (
         <div
          key={i}
