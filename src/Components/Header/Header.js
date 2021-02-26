@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Header.scss";
 import ScrollIntoView from "react-scroll-into-view";
-import music from "./1.mp3";
-import music1 from "./2.mp3";
-import music2 from "./3.mp3";
-import music3 from "./4.mp3";
-import svg from "./music.svg";
-import svg1 from "./icon.svg";
+
 export default function Header() {
-  const ms = [
-    { src: music1, name: "Mình cùng nhau đóng băng." },
-    { src: music, name: "Sao em tăt máy!" },
-    { src: music2, name: "Hom nay toi buon." },
-    { src: music3, name: "Vo tinh." },
-  ];
-  const mslength=4;
+  const ref = useRef(null);
   const [toggle, setToggle] = useState(false);
-  const [mute, toggleMusic] = useState(true);
-  const [list, toggleList] = useState(0);
+  const [mouse, setMouse] = useState(false);
   useEffect(() => {
     const header = document.getElementById("header");
     let a = null;
@@ -34,53 +22,48 @@ export default function Header() {
     });
   }, []);
   useEffect(() => {
-    const id = document.getElementById("music-content");
-
-    id.volume = "0.5";
-    if (mute) {
-      id.pause();
-    } else {
-      id.play();
+    let a;
+    if (!toggle) {
+      a = setTimeout(() => {
+        if (!mouse && window.innerWidth > 1200) {
+          setToggle(true);
+        }
+      }, 5500);
     }
-  }, [mute]);
-  useEffect(() => {
-    const id = document.getElementById("music-content");
-    const toggle = () => {
-      toggleList((a) => (a + 1) % mslength);
-    };
-    id.addEventListener("ended", toggle);
     return () => {
-      id.removeEventListener("ended", toggle);
+      clearTimeout(a);
     };
-  }, []);
-  useEffect(() => {
-    const id = document.getElementById("music-content");
-    if (!mute) {
-      id.play();
-    }
-  }, [list, mute]);
+  }, [toggle, mouse]);
+
   return (
     <>
-      <header id="header" className={!toggle ? "style" : "nostyle"}>
-        <figure id="music-player">
-          <audio
-          playsInline
-          style={{pointerEvents:"none"}}
-            id="music-content"
-            preload="auto"
-            controls
-            autoPlay={false}
-            // loop={true}
-            // muted={mute}
-            src={ms[list].src}
-          >
-            Your browser does not support the
-            <code>audio</code> element.
-          </audio>
+      <header id="header">
+        <figure
+          id="music-player"
+          className={!toggle ? "style mr-2 mt-5" : "nostyle"}
+          onMouseEnter={() => {
+            setMouse(true);
+            console.log("ok");
+          }}
+          onMouseLeave={() => {
+            setMouse(false);
+          }}
+          ref={ref}
+        >
+          <iframe
+            width="100%"
+            height="450"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            title="Sound clound"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929815216&color=%23444444&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+          ></iframe>
+         
         </figure>
 
-        <div className="link-container">
-          <ScrollIntoView selector="#galery">
+        <div className="link-container w-100">
+          <ScrollIntoView selector="#galery" className="ml-2">
             <li>Intro</li>
           </ScrollIntoView>
 
@@ -88,35 +71,19 @@ export default function Header() {
             <li>Video</li>
           </ScrollIntoView>
           <li
-            
-          >
-            <img
-
-
-onClick={() => {
-  if (mute) {
-    toggleMusic((a) => !a);
-  } else {
-    toggleList((a) => (a + 1) % ms.length);
-  }
-}}
-           
-              className={mute ? "img" : "img on"}
-              alt="rope"
-              src={mute ? svg1 : svg}
-            />
-
-            <div  className="song-name" style={mute ? { display: "none" } : {}}>
-
-              <p  className="name">{ms[list].name}</p>
-            </div>
-          </li>
-          <li
+            className="ml-auto"
             onClick={() => {
-              toggleMusic((a) => !a);
+              setToggle((state) => !state);
             }}
           >
-            {mute?`Off 😐`:`On 😃`}
+            {/* <img
+
+              
+              className={!mute ? "img" : "img on"}
+              alt="rope"
+              src={!mute ? svg1 : svg}
+            /> */}
+            {toggle ? "Hiện SoundCloud" : "Ẩn SoundCloud"}
           </li>
         </div>
 
@@ -125,7 +92,7 @@ onClick={() => {
     
     </div> */}
       </header>
-      <div
+      {/* <div
         className={!toggle ? "hamburger on" : "hamburger off"}
         onClick={() => {
           setToggle((state) => !state);
@@ -134,7 +101,8 @@ onClick={() => {
         <span className="span1"></span>
         <span className="span2"></span>
         <span className="span3"></span>
-      </div>
+      </div> */}
     </>
   );
 }
+

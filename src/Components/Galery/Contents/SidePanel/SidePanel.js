@@ -13,7 +13,7 @@ const list=[{name:'Teachers',img:bg_teacher},{name:'Girls',img:bg_girl},{name:'B
     return (
         <div className="SidePanel">
            
-               {list.map((e,i)=><div key={i} onClick={onClick(i)} className="Card-container"><Card zoom={index===i} mul={i+1} name={list[i].name} bg={list[i].img||null}/></div>)}
+               {list.map((e,i)=><div key={i} onClick={onClick(i)} className={index===i?"Card-container selected":"Card-container"}><Card zoom={index===i} mul={i+1} name={list[i].name} bg={list[i].img||null}/></div>)}
                 
         </div>
     )

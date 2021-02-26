@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player/lazy";
 import "./Contact.scss";
+import wishes from './wishes'
 export default function Video() {
   const data = [
     {
@@ -17,21 +18,23 @@ export default function Video() {
     }
   ];
   const [play, setPlay] = useState(0);
-  const [title,titleOn]=useState(true)
+  const [wish,setWish]=useState(0)
+  const [bg, toggleBg] = useState(false);
   return (
-    <div className="Video-Container p-5 d-flex" id="video">
-     <div className="blur-wallpaper"></div>
+    <div className={`Video-Container p-5 d-flex`} id="video">
+     <div className={`blur-wallpaper ${bg?"bg-black":"bg-img"}`}></div>
       <div className="Video-Select p-1 shared-inner" style={{minWidth:300,zIndex:2}}>
       <div className="landscape">
       <h1 className="title">Playing: {data[play].name}</h1>
        
-       <h3 onClick={()=>{setPlay((play+1)%data.length)}}>-next: {data[(play+1)%data.length].name}-</h3>
+       <h3 onClick={()=>{setPlay((play+1)%data.length);toggleBg(false)}}>-next: {data[(play+1)%data.length].name}-</h3>
       </div>
-        <div className="caption" >
+        <div className="caption" onClick={()=>{
+          setWish(i=>(i+1)%wishes.length)
+        }}>
           <div className="container-fluid" style={{maxWidth:768}}>
-          <p className="w-100 text-center">A11 Family thân mến!</p>
-          <p>Vậy là chúng ta đã xa nhau được {(new Date).getFullYear()-2019} năm rồi. Các bạn vẫn khỏe chứ 🤔 Đây là một website mà mình tạo ra với những kỉ niệm học sinh của chúng ta ngày đó. Hãy cùng xem và tận hưởng nhé! </p>
-          <p className="text-center w-100">---End---</p>
+         
+         <Wish name={wishes[wish].name} wishes={wishes[wish].wishes} />
 
           </div>
         </div>
@@ -47,10 +50,15 @@ export default function Video() {
         controls={true}
         width="100%"
         height="100%"
-       
-        onEnded={()=>{setPlay(a=>(a+1)%data.length)}}
+        onPause={()=>{toggleBg(false)}}
+        onPlay={()=>{toggleBg(true)}}
+        onEnded={()=>{setPlay(a=>(a+1)%data.length);toggleBg(false)}}
       />
      </div>
     </div>
   );
 }
+const Wish=({name,wishes,change})=>(<div className="position-relative pb-3" >
+      {wishes.map(e=><p>{e}</p>)}
+      <p className="text-right w-100">---from {name}---</p>
+</div>)
